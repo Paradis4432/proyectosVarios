@@ -7,6 +7,7 @@
 <<<<<<< Updated upstream
 def test():
     print("test")
+<<<<<<< Updated upstream
 =======
 
 
@@ -21,4 +22,14 @@ def checkString(string):
     close = ]})
     for i in string:
         if i in open:
+>>>>>>> Stashed changes
+=======
+
+def take(s):
+    x = []
+    for i in s:
+        x += i
+    print(x)
+
+take("test")
 >>>>>>> Stashed changes
