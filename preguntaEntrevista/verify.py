@@ -51,6 +51,7 @@ def basicTest():
     else:
         print("False")
         return
+
     checkNext(stringFalse)
 
 basicTest()
