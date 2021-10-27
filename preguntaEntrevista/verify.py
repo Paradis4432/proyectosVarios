@@ -1,57 +1,46 @@
 # create two lists, one with ( { [ and the other with ) ] }
-from typing import final
+openings = ['{', '[', '(']
+closings = ['}', ']', ')']
 
-openings = ['(', '{', '[']
-closings = [')', '}', ']']
+cache = []
 
-stringTrue = "(()[]{})"
-stringFalse = "((})[]{})"
-
-finalString = stringFalse
-
-
-#             ^   ^
-# stringTrue = "( [ ] { } )"
-#              ^         ^
-
-# al encontrar un (, encuentra el siguiente ) y lo saca de finalString
-
-def checkBase(s):
-    # check if there is an even amount of () [] {}
-    if s.count('(') == s.count(')'):
-        if s.count('[') == s.count(']'):
-            if s.count('{') == s.count('}'):
-                return True
-    return False
+def verify(string):
+    for char in string:
+        # print(char)
+        if char in openings:
+            cache.append(char)
+            # print("apending " + char)
+        elif char in closings:
+            if check(char):
+                cache.pop()
+                # print("popping " + char)
+            else:
+                # print("False " + char)
+                return print("string doesnt work")
 
 
-def checkNext(s,finalString = finalString):
-    print(finalString)
+    if len(cache) == 0:
+        print('OK')
+        
 
-    for i in s:
-        if i in openings:
-            for x in s:
-                if x in closings:
-                    # remove i and x from finalString
-                    finalString = finalString.replace(i, "")
-                    finalString = finalString.replace(x, "")
-                    print("removing")
-                else:
-                    print("not removing")
-    
-    if len(finalString) == 0:
-        print("string is valid")
+
+def check(char):
+    #if char is '}' and cache[-1] is '{':
+    #    return True
+    #elif char is ']' and cache[-1] is '[':
+    #    return True
+    #elif char is ')' and cache[-1] is '(':
+    #    return True
+    #else:
+    #    return False
+    # hard code the if statements using == instead of is
+    if char == '}' and cache[-1] == '{':
+        return True
+    elif char == ']' and cache[-1] == '[':
+        return True
+    elif char == ')' and cache[-1] == '(':
+        return True
     else:
-        print("string is not valid")
+        return False
 
-
-def basicTest():
-    if checkBase(stringFalse):
-        print("True")
-    else:
-        print("False")
-        return
-
-    checkNext(stringFalse)
-
-basicTest()
+verify("({[})")
