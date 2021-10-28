@@ -33,7 +33,7 @@ def check(char):
     #    return True
     #else:
     #    return False
-    # hard code the if statements using == instead of is
+    # hard code the if conditions using == instead of is
     if char == '}' and cache[-1] == '{':
         return True
     elif char == ']' and cache[-1] == '[':
@@ -42,5 +42,6 @@ def check(char):
         return True
     else:
         return False
+        
 
-verify("({[})")
+verify("(){}")
