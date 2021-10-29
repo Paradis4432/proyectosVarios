@@ -87,4 +87,33 @@ data = dict(
 fig = px.funnel(data, x='number', y='stage')
 fig.show()
 
+#%%
+df = px.data.tips()
+fig = px.histogram(df, x="total_bill", y="tip", color="sex", marginal="rug", hover_data=df.columns)
+fig.show()
+
+#%%
+import plotly.express as px
+df = px.data.tips()
+fig = px.ecdf(df, x="total_bill", color="sex")
+fig.show()
 # endregion
+
+#%%
+import pandas as pd
+import seaborn as sns
+from scipy.stats import binom
+
+#%%
+n = 10
+
+p = 0.5
+
+probs = []
+for x in range(0, n+1):
+    f_x = binom.pmf(x, n, p)
+    probs.append(round(f_x, 3))
+    
+probs_serie = pd.Series(probs, index = range(0, n+1))
+
+probs_serie.plot(grid=True, title='Probability of getting x heads in n coin tosses')
