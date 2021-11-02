@@ -45,3 +45,29 @@ print(result_list)
 c, v =  zip(*result_list)
 print('c =', list(c)[1])
 print('v =', v)
+
+#%%
+coordinate = ['x', 'y', 'z']
+value = [3,4,5]
+
+result = zip(coordinate, value)
+result_list = list(result)
+
+print(result_list)
+c, v = zip(*result_list)
+print(' c = ', list(c))
+print(' v = ', v)
+
+#%%
+#h e l o w o r l d
+HW = ' h e l l o   w o r l d '
+#create a list of the abc
+listA = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+for i in list(HW):
+    if i in listA:
+        print(i, end="")
+        
+
+#%%
+print("its even") if int(input("enter a number")) % 2 == 0 else print("its odd")
