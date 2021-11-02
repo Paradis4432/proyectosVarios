@@ -51,4 +51,4 @@ print(Xtest.iloc[0:2,[6,9]])
 plot_tree(tree_instance, feature_names=Xtrain.columns, filled=True, class_names=True, label=None, impurity=False) 
 plt.show()
 # %%
-accuracy_score(ytest, ypred)
+accuracy_score(ytest, ypred) 
