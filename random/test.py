@@ -1,3 +1,4 @@
+#region zipTest
 listA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 listB = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
 
@@ -58,6 +59,7 @@ c, v = zip(*result_list)
 print(' c = ', list(c))
 print(' v = ', v)
 
+#endregion
 #%%
 #h e l o w o r l d
 HW = ' h e l l o   w o r l d '

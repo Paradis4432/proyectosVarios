@@ -67,3 +67,70 @@ X = sm.add_constant(X)
 
 model = sm.OLS(y,X).fit()
 print(model.summary())
+# %%
+x_is = ad.Newspaper
+y_is =  ad.Sales
+
+x_bar = np.mean(x_is)
+
+y_bar = np.mean(y_is)
+x_is_minus_x_bar = x_is - x_bar
+
+y_is_minus_y_bar = y_is - x_bar
+y_is_minus_y_bar
+
+denom_1 = x_is_minus_x_bar ** 2
+denom = np.sum(denom_1)
+
+num_1 = x_is_minus_x_bar * y_is_minus_y_bar
+num = np.sum(num_1)
+
+beta_1_hat = num / denom
+beta_1_hat
+
+#%%
+beta_0_hat = y_bar - beta_1_hat *  x_bar
+beta_0_hat
+
+#%%
+y_is_hat = beta_0_hat + beta_1_hat * x_is
+rss = np.sum((y_is - y_is_hat) ** 2)
+rss
+#%%
+n = ad.shape[0]
+sigma_sq_hat = rss / (n - 2)
+#%%
+se_beta_1_hat = np.sqrt(sigma_sq_hat / denom)
+se_beta_1_hat
+
+#%%
+min_ci = beta_1_hat - 2 * se_beta_1_hat
+max_ci = beta_1_hat + 2 * se_beta_1_hat
+
+round(min_ci, 3), round(max_ci, 3)
+
+#%%
+num = sigma_sq_hat * np.sum(x_is ** 2)
+
+denom = n * np.sum(x_is ** 2) - np.sum(x_is)**2
+
+se_beta_0_hat = np.sqrt(num / denom)
+
+se_beta_0_hat
+
+#%%
+min_ci = beta_0_hat - 2 * se_beta_0_hat
+max_ci = beta_0_hat + 2 * se_beta_0_hat
+
+round(min_ci, 3), round(max_ci, 3)
+
+#%%
+X_t = np.array(ad.Newspaper, ndmin=2)
+X = np.transpose(X_t)
+y = ad.Sales
+
+# Tenemos que agregar explícitamente a una constante:
+X = sm.add_constant(X)
+
+model = sm.OLS(y, X).fit()
+print(model.summary())
