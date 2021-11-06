@@ -73,3 +73,36 @@ for i in list(HW):
 
 #%%
 print("its even") if int(input("enter a number")) % 2 == 0 else print("its odd")
+
+#%%
+from testFolder import testFile as test
+
+test.test()
+
+#%%
+import random
+choices = ["rock", "paper", "scissors"]
+computer = random.choice(choices)
+while True:
+    player_choice = str(input("rock, paper, or scissosrs?: "))
+    if player_choice in choices:
+        break
+
+print(f"computer: {computer}")
+print(f"player: {player_choice}")
+
+#%%
+import antigravity
+
+# %%
+import pywhatkit as kit
+mess = "que onda trolo a vos seguro que te encanta la pija no? cuantas te comiste? 1,2,3,4,5?"
+kit.sendwhatmsg("+5491131992464", mess,14,11)
+
+#%%
+import pyautogui as pyauto
+import time
+time.sleep(1)
+for i in range(50):
+    pyauto.typewrite("que onda puto vos seguro te comiste como " + str(i) + " pijas no? manco")
+    pyauto.press("enter")
