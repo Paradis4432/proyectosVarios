@@ -134,3 +134,4 @@ X = sm.add_constant(X)
 
 model = sm.OLS(y, X).fit()
 print(model.summary())
+# %%
