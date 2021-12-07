@@ -1,5 +1,13 @@
+# %%
+from typing import cast
 import data
 
-data = data.getData()
+values = data.getData()
 
-print(data)
+# %%
+count = 0
+for i in range(3, len(values)):
+    if values[i] > values[i-3]:
+        count += 1
+
+print(count)
