@@ -39,14 +39,22 @@ key = "65e824e4-6703-4c0e-8092-648c6411c267"
 profileID = "8d1aed97cc02422d9b9baa52632c0911"
 #Get players' profile response
 def getPlayerData(UUID, SBUUID):
-    data = requests.get("https://api.hypixel.net/skyblock/profile?key="+ key +"&uuid="+ UUID +"&profile=" + SBUUID).json()
+    data = requests.get("https://api.hypixel.net/player?key="+ key +"&uuid="+ UUID).json()
     return data
+lastOnline = getPlayerData(id, profileID)
+if lastOnline["player"]["lastLogin"] > lastOnline["player"]["lastLogout"]:
+    print("online")
+else:
+    print("offline")
 
+
+#%%
 #Get players' collections
 def getCollection(playerID, profileID):
     data = getPlayerData(playerID, profileID)
     collectionData = data['profile']['members'][playerID]['collection']
     return collectionData
+#%%
 
 #%%
 def a():
@@ -103,5 +111,6 @@ def check():
             time.sleep(2)
             keyboard.press_and_release("esc")
             keyboard.press_and_release("1")
-            
-check()
+
+#%%
+requests.get("")
