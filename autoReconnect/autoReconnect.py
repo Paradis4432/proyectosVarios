@@ -112,7 +112,7 @@ def goFromHubToIs():
     pyautogui.press('t')
 
 def log(text):
-    with open("log.txt" , "a") as f:
+    with open("autoReconnect/log.txt" , "a") as f:
         f.write(text + "\n")
 
 cicle = 0
@@ -121,9 +121,9 @@ while True:
     #num = random.randint(13, 24)
     num = 1
     if cicle > 0:
-        time.sleep(20)
+        time.sleep(num * 60)
     # log current time
-    log(time.ctime())
+    log("\n" + str(time.ctime()))
     log(str (num) + " minutes passed checking. starting cicle id " + str(cicle))
     cicle += 1
 
