@@ -5,6 +5,7 @@ import pyautogui
 import os
 import win32gui
 import re
+import random
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -61,23 +62,27 @@ def closeGameAndLauncher():
 
 def openGameAndEnterServer():
     log("OGAES: opening game")
-    os.startfile("C:/Users/Lucas/Desktop/mc/MC_oficial")
+    try:
+        os.startfile("C:/Users/Lucas/Desktop/mc/MC_oficial")
+    except:
+        log("OGAES: error opening game")
+        return    
     time.sleep(15)
     # check for connection, if not, reconnect
-    location = pyautogui.locateOnScreen('playButt.png')
+    location = pyautogui.locateOnScreen('autoReconnect/playButt.png')
     if location is None:
         log("OGAES: game not found, stopping")
         return
     pyautogui.click(location)
     time.sleep(15)
-    location = pyautogui.locateOnScreen('multiplayerButt.png')
+    location = pyautogui.locateOnScreen('autoReconnect/multiplayerButt.png')
     log("OGAES: clicking multiplayer")
     if location is None:
         log("OGAES: multiplayer not found, stopping")
         return
     pyautogui.click(location)
     time.sleep(5)
-    location = pyautogui.locateOnScreen('HPlogo.png')
+    location = pyautogui.locateOnScreen('autoReconnect/HPlogo.png')
     log("OGAES: clicking HPlogo")
     if location is None:
         log("OGAES: HPlogo not found, stopping")
@@ -91,18 +96,17 @@ def openGameAndEnterServer():
     pyautogui.typewrite('/skyblock', interval=0.25)
     # check if location is lobby, hub or island
     pyautogui.press('enter')
-    if getCurrentArea() == "Private Island" or getCurrentArea() == "Hub":
-        time.sleep(3)
-        pyautogui.keyDown('w')
-        time.sleep(1)
-        pyautogui.keyUp('w')
-        pyautogui.press('t')
-    else:
-        log("OGAES: unable to enter skyblock")
+    time.sleep(3)
+    pyautogui.keyDown('w')
+    time.sleep(1)
+    pyautogui.keyUp('w')
+    pyautogui.press('t')
+    if getCurrentArea() == "Hub":
+        goFromHubToIs()
+
 
 def goFromHubToIs():
     # press t, type /is and press enter, wait 2 seconds and press w for 1 second
-    pyautogui.press('t')
     pyautogui.typewrite('/is', interval=0.25)
     pyautogui.press('enter')
     time.sleep(3)
@@ -117,53 +121,60 @@ def log(text):
 
 cicle = 0
 while True:
-    # pick a random number between 13 and 24
-    #num = random.randint(13, 24)
-    num = 1
-    if cicle > 0:
-        time.sleep(num * 60)
-    # log current time
-    log("\n" + str(time.ctime()))
-    log(str (num) + " minutes passed checking. starting cicle id " + str(cicle))
-    cicle += 1
+    try:
+        # pick a random number between 13 and 24
+        num = random.randint(13, 24)
+        if cicle > 0:
+            time.sleep(num * 60)
+        # log current time
+        log("\n" + str(time.ctime()))
+        log(str (num) + " minutes passed checking. starting cicle id " + str(cicle))
+        cicle += 1
 
-    area = getCurrentArea()
-    log("Current area: " + area)
-    if area == "Private Island":
-        log("Current area is private island, continuing")
-        continue
-    if area == "Hub":
-        log("Going from hub to island")
-        goFromHubToIs()
-        # and check if now its fine
-        if getCurrentArea() == "Private Island":
-            # log this
-            log("Now in island")
+        area = getCurrentArea()
+        log("Current area: " + area)
+        if area == "Private Island":
+            log("Current area is private island, continuing")
             continue
-        else:
-            # log this
-            log("Something went wrong, restarting")
+        elif area == "Hub":
+            log("Going from hub to island")
+            goFromHubToIs()
+            # and check if now its fine
+            if getCurrentArea() == "Private Island":
+                # log this
+                log("Now in island")
+                continue
+            else:
+                # log this
+                log("Something went wrong, restarting")
+                closeGameAndLauncher()
+                openGameAndEnterServer()
+                continue
+        elif area == "None":
+            log("No area found, restarting")
             closeGameAndLauncher()
             openGameAndEnterServer()
             continue
-    # at this point i know im not in the hub or island
-    if not isOnline():
-        log("Not online, checking internet and starting game")
-        if not internetIsUp():
-            # log this
-            log("Internet is down, waiting for next cicle")
+        # at this point i know im not in the hub or island
+        if not isOnline():
+            log("Not online, checking internet and starting game")
+            if not internetIsUp():
+                # log this
+                log("Internet is down, waiting for next cicle")
+                continue
+            if checkIfGameIsOpen():
+                log("Game is open, closing it")
+                closeGameAndLauncher()
+            openGameAndEnterServer()
+        # at this point i know i am online, and that internet is up
+        # so i close the game and try to log back in
+        if not checkIfGameIsOpen():
+            # game cant open, retry
+            log("Game is closed, restarting")
+            openGameAndEnterServer()
+        if getCurrentArea() == "Private Island":
+            #log everthing works fine
+            log("Final cicle passed")
             continue
-        if checkIfGameIsOpen():
-            log("Game is open, closing it")
-            closeGameAndLauncher()
-        openGameAndEnterServer()
-    # at this point i know i am online, and that internet is up
-    # so i close the game and try to log back in
-    if not checkIfGameIsOpen():
-        # game cant open, retry
-        log("Game is closed, restarting")
-        openGameAndEnterServer()
-    if getCurrentArea() == "Private Island":
-        #log everthing works fine
-        log("Final cicle passed")
-        continue
+    except Exception as e:
+        log("Unexpected error: " + str(e) + " last cicle ran: " + str(cicle)) 
