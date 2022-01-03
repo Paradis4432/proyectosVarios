@@ -1,0 +1,12 @@
+
+Mon Jan  3 15:36:17 2022
+24 minutes passed checking. starting cicle id 0
+Current area: None
+No area found, restarting
+CGAL: closing game
+CGAL: closing launcher
+OGAES: opening game
+OGAES: clicking multiplayer
+OGAES: clicking HPlogo
+OGAES: movement done, assuming everything is ok, checking area
+Final cicle passed

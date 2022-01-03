@@ -101,7 +101,9 @@ def openGameAndEnterServer():
     time.sleep(1)
     pyautogui.keyUp('w')
     pyautogui.press('t')
+    log("OGAES: movement done, assuming everything is ok, checking area")
     if getCurrentArea() == "Hub":
+        log("OGAES: in hub, going to island")
         goFromHubToIs()
 
 
@@ -154,7 +156,7 @@ while True:
             log("No area found, restarting")
             closeGameAndLauncher()
             openGameAndEnterServer()
-            continue
+            #continue
         # at this point i know im not in the hub or island
         if not isOnline():
             log("Not online, checking internet and starting game")
@@ -178,3 +180,6 @@ while True:
             continue
     except Exception as e:
         log("Unexpected error: " + str(e) + " last cicle ran: " + str(cicle)) 
+        
+
+    break
