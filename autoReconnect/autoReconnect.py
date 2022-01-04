@@ -11,19 +11,32 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
+
+def log(text):
+    with open("autoReconnect/log.txt", "a") as f:
+        f.write(text + "\n")
+
+
 def getCurrentArea():
     link = "https://sky.lea.moe/stats/Paradis120202/Watermelon"
     res = requests.get(link)
-    # get the source code of the page
-    data = driver.page_source
-
-    res = requests.get(link)
     data = res.content.decode("utf-8")
-    data = data.split("""<div class="additional-stat"><span class="stat-name">Current Area: </span><span class="stat-value">""")
+    data = data.split(
+        """<div class="additional-stat"><span class="stat-name">Current Area: </span><span class="stat-value">""")
     try:
         currentArea = data[1].split("</span>")[0]
     except IndexError:
-        currentArea = "None"
+        log("GCA: something went wrong, attempting again")
+        res2 = requests.get(link)
+        data2 = res2.content.decode("utf-8")
+        data2 = data2.split(
+            """<div class="additional-stat"><span class="stat-name">Current Area: </span><span class="stat-value">""")
+        try:
+            currentArea = data2[1].split("</span>")[0]
+        except IndexError:
+            log("GCA: second attempt failed, assuming area is not island")
+            currentArea = "None"
+
     return currentArea
 
 
@@ -54,14 +67,13 @@ def closeGameAndLauncher():
     time.sleep(2)
 
 
-
 def openGameAndEnterServer():
     log("OGAES: opening game")
     try:
         os.startfile("C:/Users/Lucas/Desktop/mc/MC_oficial")
     except:
         log("OGAES: error opening game")
-        return    
+        return
     time.sleep(15)
     # check for connection, if not, reconnect
     location = pyautogui.locateOnScreen('autoReconnect/playButt.png')
@@ -112,9 +124,6 @@ def goFromHubToIs():
     pyautogui.keyUp('w')
     pyautogui.press('t')
 
-def log(text):
-    with open("autoReconnect/log.txt" , "a") as f:
-        f.write(text + "\n")
 
 cicle = 0
 while True:
@@ -125,7 +134,7 @@ while True:
             time.sleep(num * 60)
         # log current time
         log("\n" + str(time.ctime()))
-        log(str (num) + " minutes passed checking. starting cicle id " + str(cicle))
+        log(str(num) + " minutes passed checking. starting cicle id " + str(cicle))
         cicle += 1
 
         area = getCurrentArea()
@@ -151,7 +160,7 @@ while True:
             log("No area found, restarting")
             closeGameAndLauncher()
             openGameAndEnterServer()
-            #continue
+            # continue
         # at this point i know im not in the hub or island
         if not isOnline():
             log("Not online, checking internet and starting game")
@@ -170,8 +179,8 @@ while True:
             log("Game is closed, restarting")
             openGameAndEnterServer()
         if getCurrentArea() == "Private Island":
-            #log everthing works fine
+            # log everthing works fine
             log("Final cicle passed")
             continue
     except Exception as e:
-        log("Unexpected error: " + str(e) + " last cicle ran: " + str(cicle)) 
+        log("Unexpected error: " + str(e) + " last cicle ran: " + str(cicle))
