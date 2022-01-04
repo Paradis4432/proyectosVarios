@@ -12,23 +12,18 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
 def getCurrentArea():
-    # Use the `install()` method to set `executabe_path` in a new `Service` instance:
-    service = Service(executable_path=ChromeDriverManager().install())
-
-    # Pass in the `Service` instance with the `service` keyword:
-    driver = webdriver.Chrome(service=service)
-
-    driver.get("https://sky.lea.moe/stats/Paradis120202/Watermelon")
+    link = "https://sky.lea.moe/stats/Paradis120202/Watermelon"
+    res = requests.get(link)
     # get the source code of the page
     data = driver.page_source
-    data1 = data.split(
-        """<div class="additional-stat"><span class="stat-name">Current Area: </span><span class="stat-value">""")
+
+    res = requests.get(link)
+    data = res.content.decode("utf-8")
+    data = data.split("""<div class="additional-stat"><span class="stat-name">Current Area: </span><span class="stat-value">""")
     try:
-        currentArea = data1[1].split("</span>")[0]
+        currentArea = data[1].split("</span>")[0]
     except IndexError:
         currentArea = "None"
-
-    driver.close()
     return currentArea
 
 
@@ -180,6 +175,3 @@ while True:
             continue
     except Exception as e:
         log("Unexpected error: " + str(e) + " last cicle ran: " + str(cicle)) 
-        
-
-    break
