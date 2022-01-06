@@ -1,91 +1,118 @@
-
-Tue Jan  4 00:01:45 2022
-17 minutes passed checking. starting cicle id 0
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 00:18:57 2022
+Thu Jan  6 00:45:39 2022
 17 minutes passed checking. starting cicle id 1
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 00:34:06 2022
-15 minutes passed checking. starting cicle id 2
+Thu Jan  6 01:03:40 2022
+18 minutes passed checking. starting cicle id 2
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 00:49:14 2022
-15 minutes passed checking. starting cicle id 3
+Thu Jan  6 01:20:42 2022
+17 minutes passed checking. starting cicle id 3
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 01:10:22 2022
-21 minutes passed checking. starting cicle id 4
+Thu Jan  6 01:35:43 2022
+15 minutes passed checking. starting cicle id 4
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 01:28:31 2022
-18 minutes passed checking. starting cicle id 5
+Thu Jan  6 01:48:44 2022
+13 minutes passed checking. starting cicle id 5
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 01:52:38 2022
-24 minutes passed checking. starting cicle id 6
+Thu Jan  6 02:05:46 2022
+17 minutes passed checking. starting cicle id 6
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 02:07:46 2022
-15 minutes passed checking. starting cicle id 7
+Thu Jan  6 02:18:48 2022
+13 minutes passed checking. starting cicle id 7
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 02:23:56 2022
-16 minutes passed checking. starting cicle id 8
+Thu Jan  6 02:40:50 2022
+22 minutes passed checking. starting cicle id 8
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 02:37:05 2022
-13 minutes passed checking. starting cicle id 9
+Thu Jan  6 02:58:52 2022
+18 minutes passed checking. starting cicle id 9
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 02:58:13 2022
-21 minutes passed checking. starting cicle id 10
+Thu Jan  6 03:18:53 2022
+20 minutes passed checking. starting cicle id 10
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 03:14:25 2022
-16 minutes passed checking. starting cicle id 11
+Thu Jan  6 03:35:55 2022
+17 minutes passed checking. starting cicle id 11
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 03:33:34 2022
-19 minutes passed checking. starting cicle id 12
+Thu Jan  6 03:57:57 2022
+22 minutes passed checking. starting cicle id 12
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 03:46:42 2022
-13 minutes passed checking. starting cicle id 13
+Thu Jan  6 04:15:59 2022
+18 minutes passed checking. starting cicle id 13
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 04:10:49 2022
-24 minutes passed checking. starting cicle id 14
+Thu Jan  6 04:34:02 2022
+18 minutes passed checking. starting cicle id 14
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 04:34:57 2022
-24 minutes passed checking. starting cicle id 15
+Thu Jan  6 04:51:03 2022
+17 minutes passed checking. starting cicle id 15
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 04:55:05 2022
-20 minutes passed checking. starting cicle id 16
+Thu Jan  6 05:04:05 2022
+13 minutes passed checking. starting cicle id 16
 Current area: Private Island
 Current area is private island, continuing
 
-Tue Jan  4 05:16:13 2022
-21 minutes passed checking. starting cicle id 17
+Thu Jan  6 05:24:07 2022
+20 minutes passed checking. starting cicle id 17
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 05:40:09 2022
+16 minutes passed checking. starting cicle id 18
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 05:53:11 2022
+13 minutes passed checking. starting cicle id 19
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 06:07:13 2022
+14 minutes passed checking. starting cicle id 20
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 06:29:15 2022
+22 minutes passed checking. starting cicle id 21
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 06:53:17 2022
+24 minutes passed checking. starting cicle id 22
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 07:14:19 2022
+21 minutes passed checking. starting cicle id 23
 Current area: Hub
 Going from hub to island
 Something went wrong, restarting
@@ -97,88 +124,86 @@ OGAES: clicking HPlogo
 OGAES: movement done, assuming everything is ok, checking area
 OGAES: in hub, going to island
 
-Tue Jan  4 05:38:43 2022
-21 minutes passed checking. starting cicle id 18
-Current area: Hub
-Going from hub to island
-Something went wrong, restarting
+Thu Jan  6 07:30:28 2022
+15 minutes passed checking. starting cicle id 24
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 07:50:31 2022
+20 minutes passed checking. starting cicle id 25
+GCA: something went wrong, waiting 120 seconds and attempting again
+GCA: second attempt failed, assuming area is not island
+Current area: None
+No area found, restarting
+CGAL: closing game
+CGAL: closing launcher
+OGAES: opening game
+OGAES: game not found, stopping
+Not online, checking internet and starting game
+OGAES: opening game
+OGAES: clicking multiplayer
+OGAES: clicking HPlogo
+OGAES: movement done, assuming everything is ok, checking area
+GCA: something went wrong, waiting 120 seconds and attempting again
+OGAES: in hub, going to island
+Final cicle passed
+
+Thu Jan  6 08:08:55 2022
+13 minutes passed checking. starting cicle id 26
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 08:21:57 2022
+13 minutes passed checking. starting cicle id 27
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 08:45:59 2022
+24 minutes passed checking. starting cicle id 28
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 09:05:02 2022
+19 minutes passed checking. starting cicle id 29
+GCA: something went wrong, waiting 120 seconds and attempting again
+GCA: second attempt failed, assuming area is not island
+Current area: None
+No area found, restarting
 CGAL: closing game
 CGAL: closing launcher
 OGAES: opening game
 OGAES: clicking multiplayer
 OGAES: clicking HPlogo
 OGAES: movement done, assuming everything is ok, checking area
-OGAES: in hub, going to island
+GCA: something went wrong, waiting 120 seconds and attempting again
+Final cicle passed
 
-Tue Jan  4 06:04:11 2022
-24 minutes passed checking. starting cicle id 19
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 06:26:19 2022
-22 minutes passed checking. starting cicle id 20
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 06:49:27 2022
-23 minutes passed checking. starting cicle id 21
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 07:07:36 2022
-18 minutes passed checking. starting cicle id 22
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 07:27:44 2022
-20 minutes passed checking. starting cicle id 23
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 07:44:52 2022
-17 minutes passed checking. starting cicle id 24
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 08:01:04 2022
-16 minutes passed checking. starting cicle id 25
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 08:25:12 2022
-24 minutes passed checking. starting cicle id 26
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 08:42:24 2022
-17 minutes passed checking. starting cicle id 27
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 09:01:32 2022
-19 minutes passed checking. starting cicle id 28
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 09:19:40 2022
-18 minutes passed checking. starting cicle id 29
-Current area: Private Island
-Current area is private island, continuing
-
-Tue Jan  4 09:38:48 2022
-19 minutes passed checking. starting cicle id 30
-Current area: Hub
-Going from hub to island
-Something went wrong, restarting
+Thu Jan  6 09:23:07 2022
+13 minutes passed checking. starting cicle id 30
+GCA: something went wrong, waiting 120 seconds and attempting again
+GCA: second attempt failed, assuming area is not island
+Current area: None
+No area found, restarting
 CGAL: closing game
 CGAL: closing launcher
 OGAES: opening game
 OGAES: clicking multiplayer
 OGAES: clicking HPlogo
 OGAES: movement done, assuming everything is ok, checking area
-OGAES: in hub, going to island
+GCA: something went wrong, waiting 120 seconds and attempting again
+Final cicle passed
 
-Tue Jan  4 10:02:13 2022
-22 minutes passed checking. starting cicle id 31
+Thu Jan  6 09:42:23 2022
+13 minutes passed checking. starting cicle id 31
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 09:58:25 2022
+16 minutes passed checking. starting cicle id 32
+Current area: Private Island
+Current area is private island, continuing
+
+Thu Jan  6 10:19:27 2022
+21 minutes passed checking. starting cicle id 33
 Current area: Private Island
 Current area is private island, continuing

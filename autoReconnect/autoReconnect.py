@@ -26,13 +26,15 @@ def getCurrentArea():
     try:
         currentArea = data[1].split("</span>")[0]
     except IndexError:
-        log("GCA: something went wrong, attempting again")
+        log("GCA: something went wrong, waiting 120 seconds and attempting again")
+        time.sleep(120)
         res2 = requests.get(link)
         data2 = res2.content.decode("utf-8")
         data2 = data2.split(
             """<div class="additional-stat"><span class="stat-name">Current Area: </span><span class="stat-value">""")
         try:
             currentArea = data2[1].split("</span>")[0]
+            log("GCA: current area is " + currentArea)
         except IndexError:
             log("GCA: second attempt failed, assuming area is not island")
             currentArea = "None"
@@ -132,9 +134,9 @@ while True:
         num = random.randint(13, 24)
         if cicle > 0:
             time.sleep(num * 60)
-        # log current time
-        log("\n" + str(time.ctime()))
-        log(str(num) + " minutes passed checking. starting cicle id " + str(cicle))
+            # log current time
+            log("\n" + str(time.ctime()))
+            log(str(num) + " minutes passed checking. starting cicle id " + str(cicle))
         cicle += 1
 
         area = getCurrentArea()
