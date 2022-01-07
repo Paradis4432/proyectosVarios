@@ -128,15 +128,19 @@ def goFromHubToIs():
 
 
 cicle = 0
+wait = True
 while True:
     try:
         # pick a random number between 13 and 24
         num = random.randint(13, 24)
-        if cicle > 0:
+        if cicle > 0 and wait is True:
             time.sleep(num * 60)
             # log current time
             log("\n" + str(time.ctime()))
             log(str(num) + " minutes passed checking. starting cicle id " + str(cicle))
+        if wait is False:
+            log("Wait is false, starting cicle id " + str(cicle))
+            wait = True
         cicle += 1
 
         area = getCurrentArea()
@@ -146,6 +150,7 @@ while True:
             continue
         elif area == "Hub":
             log("Going from hub to island")
+            pyautogui.press('t')
             goFromHubToIs()
             # and check if now its fine
             if getCurrentArea() == "Private Island":
@@ -186,3 +191,4 @@ while True:
             continue
     except Exception as e:
         log("Unexpected error: " + str(e) + " last cicle ran: " + str(cicle))
+        wait = False
