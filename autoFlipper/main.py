@@ -9,3 +9,27 @@ import json
 data = requests.get("https://api.hypixel.net/skyblock/auctions?key=" + key).json()
 
 data["auctions"]
+
+#%%
+import pprint
+stuff = ['spam', 'eggs', 'lumberjack', 'knights', 'ni']
+oo = pprint.PrettyPrinter(indent=1)
+oo.pprint(stuff)
+#%%
+tup = ('spam', ('eggs', ('lumberjack', ('knights', ('ni', ('dead',
+('parrot', ('fresh fruit',))))))))
+pp = pprint.PrettyPrinter(depth=6)
+pp.pprint(tup)
+
+
+#%%
+import requests
+import json
+
+data = requests.get("https://sky.coflnet.com/flipper")
+data.content
+
+#%%
+data = requests.get("https://api.hypixel.net/skyblock/auctions?key={key}&player{id}").json()
+for i in data["auctions"]:
+    print(i.keys())
