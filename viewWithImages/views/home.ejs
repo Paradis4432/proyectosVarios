@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+
+    <%= test %>
+    <img src="<%= fileName %>" alt="i0">
+
+    <br>
+    <br>
+    <br>
+    <%= test2 %>
+
+    <% for (var i =1; i <=10;  i++ ) { %>
+        <br/>  <%= i %> 
+        <%#  will output the numbers 1-10 %>
+        <% } %>
+
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    second loop: 
+
+    <% for (var i = 0; i <= test2.length; i++ ) { %>
+        <br/><%= test2[i] %>
+    <% } %>
+
+    <form enctype="multipart/form-data" action="/upload/image" method="post">
+        <input id="image-file" type="file"/>
+        <button type="submit">upload</button>
+    </form>
+
+    
+</body>
+</html>
+
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+</style>
