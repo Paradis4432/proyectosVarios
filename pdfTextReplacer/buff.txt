@@ -1,0 +1,129 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11.payroll.NOV.KDDS.2021
+
+
+Nombre 
+Cargo 
+Fecha Ingreso 
+Días Trab. 
+
+: Name
+: ANALISTA CONTABLE SUPERIOR
+: 06. Agosto. 2018. 
+: 30 
+
+Rut: n_rut 
+
+Codigo interno: M27188 / 1 
+
+Contrato: Indefinido 
+
+Certifico haber recibido en este acto a mi entera satisfacción, el total de haberes en la presente liquidación. Asimismo, declaro que 
+nada se me adeuda y no tener reclamo alguno en contra de la empresa ADECCO RECURSOS HUMANOS S.A., por concepto 
+de Remuneraciones. 
+
+Name
+
+ n_rut
+
+ADECCO RECURSOS HUMANOS S.A. 
+RUT: 96.820.170-0 
+Calle Rosario Norte 100 Of 10, Las Condes. 
+
+LIQUIDACION DE REMUNERACIONES 
+Noviembre del 2021 
+
+HABERES 
+
+IMPONIBLE 
+
+002 Sueldo Base (plazo indefinido) $ 900.000 
+
+099 Gratificación 25% con Tope $ 126.865 
+004 BPOP DPNJTJPO $ 655.000 
+TOTAL IMPONIBLE $ 1.681.865 
+
+NO IMPONIBLE 
+
+121 Movilización $ 150.000 
+
+124 Colación $ 150.000 
+
+TOTAL NO IMPONIBLE $ 300.000 
+
+TOTAL HABERES $ 1.981.865 
+
+DESCUENTOS 
+
+300 Previsión A.F.P Capital $ 181.137 
+
+311 SALUD - Sistema Isapre $ 117.731 
+
+320 Seguro de Cesantía Trabajador $ 10.091 
+
+334 Impuesto Único a Pagar (=) $ 26.592 
+
+315 a.1.7 $ 15.981 
+
+306 Ahorro Caja $ 12.789 
+
+TOTAL DESCUENTOS $ 364.320 
+
+TOTAL LIQUIDO A PAGAR $ 1.617.544 
+
+OBS: 
+
+
+
+
