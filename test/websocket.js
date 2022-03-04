@@ -1,0 +1,1 @@
+let socket = new WebSocket("ws://javascript.info");
